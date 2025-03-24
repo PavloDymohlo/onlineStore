@@ -1,0 +1,10 @@
+package ua.dymohlo.onlineStore.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import ua.dymohlo.onlineStore.entity.User;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmailIgnoreCase(String email);
+}

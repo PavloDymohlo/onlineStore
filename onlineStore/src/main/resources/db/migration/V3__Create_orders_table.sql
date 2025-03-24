@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS orders (
+    id BIGSERIAL PRIMARY KEY,
+    order_number VARCHAR(50) UNIQUE NOT NULL,
+    user_id BIGINT NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
